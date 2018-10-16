@@ -41,7 +41,7 @@ $("#add-employee-btn").on("click", function(event) {
 
 
 
-  });
+});
 
 
 
