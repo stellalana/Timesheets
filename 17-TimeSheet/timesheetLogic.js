@@ -28,4 +28,20 @@ $("#add-employee-btn").on("click", function(event) {
     monthlyRate = $("#rate-input").val().trim();
     console.log(name, role, startDate, monthlyRate);
     $("#employee-table").append('<tr>' + '<td scope="col">' + name + '</td>' + '<td scope="col">' + role + '</td>'+ '<td scope="col">' + startDate + '</td>'+ '<td scope="col">' + monthsWorked + '</td>'+ '<td scope="col">' + monthlyRate + '</td>'+ '<td scope="col">' + totalBilled + '</td>');
-});
+
+      // Code for handling the push
+  database.ref().push({
+    name: name,
+    role: role,
+    startDate: startDate,
+    monthlyRate: monthlyRate,
+    dateAdded: firebase.database.ServerValue.TIMESTAMP
+  });
+
+
+
+
+  });
+
+
+
